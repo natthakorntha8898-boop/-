@@ -1,87 +1,29 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>เครื่องคำนวณการหมักสุรา</title>
+<html>
+    <head>
+        <style>
+            boby {
+                text-align: center;
+                font-family: AriaL;
+            }
 
-<style>
-body{
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 20px;
-    background:#f4f4f4;
-}
+            button {
+                padding: 10px 20px;
+            }
+        </style>
+    </head>
+<boby>
+    
+<h1>เว็บตัวอย่าง</h1>
 
-.container{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-}
+    <button onclick="sayhello()">
+        กดที่นี่
+    </button>
 
-input{
-    width:100%;
-    padding:10px;
-    margin:8px 0;
-    box-sizing:border-box;
-}
+    <script>
+        functlon  sayHello() {
+            alert("สวัดดี!");
+        }
+        </script>
 
-button{
-    width:100%;
-    padding:12px;
-    background:#2e7d32;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#1b5e20;
-}
-
-.result{
-    margin-top:15px;
-    font-size:20px;
-    font-weight:bold;
-}
-</style>
-</head>
-<body>
-
-<div class="container">
-    <h2>เครื่องคำนวณการหมักสุรา</h2>
-
-    <label>Original Gravity (OG)</label>
-    <input type="number" step="0.001" id="og" placeholder="เช่น 1.080">
-
-    <label>Final Gravity (FG)</label>
-    <input type="number" step="0.001" id="fg" placeholder="เช่น 1.010">
-
-    <button onclick="calculateABV()">คำนวณ</button>
-
-    <div class="result" id="result"></div>
-</div>
-
-<script>
-function calculateABV(){
-    const og = parseFloat(document.getElementById('og').value);
-    const fg = parseFloat(document.getElementById('fg').value);
-
-    if(isNaN(og) || isNaN(fg)){
-        document.getElementById('result').innerHTML =
-            "กรุณากรอกค่า OG และ FG";
-        return;
-    }
-
-    const abv = (og - fg) * 131.25;
-
-    document.getElementById('result').innerHTML =
-        "ABV โดยประมาณ: " + abv.toFixed(2) + "%";
-}
-</script>
-
-</body>
+</boby>
 </html>
